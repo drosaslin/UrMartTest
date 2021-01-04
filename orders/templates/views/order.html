@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'order/css/order.css' %}">
+
+    <title>UrMart</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-2 p-0 v-center">
+                <select class="form-control" id="productDropdown">
+                </select>
+
+            </div>
+            <div class="col-2 v-center">
+                <div class="value-container">
+                    <div class="value-button" onclick="orderView.onDecreaseValue()">-</div>
+                    <input class="value-box" type="text" value="1" id="value">
+                    <div class="value-button" onclick="orderView.onIncreaseValue()">+</div>
+                </div>
+                <button type="button" class="btn btn-success" id="orderButton" onclick="orderView.onOrderButtonClick()">Order</button>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="user-info-container">
+                    <div>
+                        <input type="text" id="customerName" value="John Doe" disabled>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="vipCheckBox" onclick="orderView.onVipCheckBoxClick()">
+                        <label class="form-check-label" for="vipCheckBox">VIP</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-8 p-0">
+                <h2>Item List:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Prod ID</th>
+                            <th scope="col">stock_pcs</th>
+                            <th scope="col">price</th>
+                            <th scope="col">shop_id</th>
+                            <th scope="col">vip</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-8 p-0">
+                <h2>Order History:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">product_id</th>
+                            <th scope="col">qty</th>
+                            <th scope="col">price</th>
+                            <th scope="col">shop_id</th>
+                            <th scope="col">customer_id</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script src="{% static 'order/js/models.js' %}"></script>
+    <script src="{% static 'order/js/order.js' %} "></script>
+</body>
+
+</html>

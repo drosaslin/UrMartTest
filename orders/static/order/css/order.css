@@ -1,0 +1,64 @@
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.value-container {
+    margin-right: 10px;
+}
+
+.value-button {
+    display: inline-block;
+    width: 28px;
+    height: auto;
+    text-align: center;
+    background-color: grey;
+    color: white;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+.value-box {
+    display: inline-block;
+    border-color: transparent;
+    width: 35px;
+    height: auto;
+    text-align: center;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.user-info-container {
+    display: inline-block;
+    text-align: start;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
